@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://cm6a4kobh25rr"]
+
+[ext_resource type="Script" uid="uid://85rv2ycu0inu" path="res://scripts/wall.gd" id="1_ccee6"]
+[ext_resource type="Texture2D" uid="uid://cmbldpxsh4q5d" path="res://sprites/Wall.png" id="2_2f2gu"]
+
+[node name="Wall" type="Node2D" node_paths=PackedStringArray("sprite_list")]
+script = ExtResource("1_ccee6")
+activation_status = [true, false, false, true, true, false, false, false]
+sprite_list = [NodePath("BarrierSprite0"), NodePath("BarrierSprite1"), NodePath("BarrierSprite2"), NodePath("BarrierSprite3"), NodePath("BarrierSprite4"), NodePath("BarrierSprite5"), NodePath("BarrierSprite6"), NodePath("BarrierSprite7")]
+
+[node name="BarrierSprite0" type="Sprite2D" parent="."]
+position = Vector2(0, -56)
+scale = Vector2(7, 7)
+texture = ExtResource("2_2f2gu")
+
+[node name="BarrierSprite1" type="Sprite2D" parent="."]
+position = Vector2(0, -168)
+scale = Vector2(7, 7)
+texture = ExtResource("2_2f2gu")
+
+[node name="BarrierSprite2" type="Sprite2D" parent="."]
+position = Vector2(0, -280)
+scale = Vector2(7, 7)
+texture = ExtResource("2_2f2gu")
+
+[node name="BarrierSprite3" type="Sprite2D" parent="."]
+position = Vector2(0, -392)
+scale = Vector2(7, 7)
+texture = ExtResource("2_2f2gu")
+
+[node name="BarrierSprite4" type="Sprite2D" parent="."]
+position = Vector2(0, -504)
+scale = Vector2(7, 7)
+texture = ExtResource("2_2f2gu")
+
+[node name="BarrierSprite5" type="Sprite2D" parent="."]
+position = Vector2(0, -616)
+scale = Vector2(7, 7)
+texture = ExtResource("2_2f2gu")
+
+[node name="BarrierSprite6" type="Sprite2D" parent="."]
+position = Vector2(0, -728)
+scale = Vector2(7, 7)
+texture = ExtResource("2_2f2gu")
+
+[node name="BarrierSprite7" type="Sprite2D" parent="."]
+position = Vector2(0, -840)
+scale = Vector2(7, 7)
+texture = ExtResource("2_2f2gu")
