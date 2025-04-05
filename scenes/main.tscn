@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://bq7qlpweasj40"]
+[gd_scene load_steps=13 format=4 uid="uid://bq7qlpweasj40"]
 
 [ext_resource type="Texture2D" uid="uid://10ooxyulxeqn" path="res://sprites/Background.png" id="1_e3vds"]
 [ext_resource type="Texture2D" uid="uid://4jhjpac0fqrb" path="res://sprites/IceTiles.png" id="1_pdt5x"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cm6a4kobh25rr" path="res://scenes/wall.tscn" id="4_ul82v"]
 [ext_resource type="Texture2D" uid="uid://dxce627ep8cyu" path="res://sprites/Player.png" id="6_xrqsn"]
 [ext_resource type="Script" uid="uid://dit3erq1ot105" path="res://scripts/arrow_manager.gd" id="8_s84q0"]
+[ext_resource type="Script" uid="uid://bh12soiiw5p1e" path="res://scenes/victory_ui.gd" id="9_85g3d"]
 [ext_resource type="PackedScene" uid="uid://cxdlnhpbig6vc" path="res://scenes/arrow.tscn" id="9_r1wcj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3taat"]
@@ -16,6 +17,10 @@ texture = ExtResource("1_pdt5x")
 
 [sub_resource type="TileSet" id="TileSet_kwy6m"]
 sources/0 = SubResource("TileSetAtlasSource_3taat")
+
+[sub_resource type="LabelSettings" id="LabelSettings_tipki"]
+font_size = 96
+font_color = Color(0, 0, 0, 1)
 
 [node name="LaytonSlipperyCrossings" type="Node2D"]
 
@@ -126,3 +131,42 @@ position = Vector2(2.86102e-06, 16)
 
 [node name="WestArrow" parent="ArrowManager" instance=ExtResource("9_r1wcj")]
 position = Vector2(-16, -9.53674e-07)
+
+[node name="VictoryUI" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("9_85g3d")
+
+[node name="BlackDim" type="ColorRect" parent="VictoryUI"]
+layout_mode = 0
+offset_right = 1344.0
+offset_bottom = 1344.0
+color = Color(0, 0, 0, 0.392157)
+
+[node name="WindowBackground" type="ColorRect" parent="VictoryUI"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 328.0
+offset_right = 1216.0
+offset_bottom = 936.0
+
+[node name="Message" type="Label" parent="VictoryUI/WindowBackground"]
+layout_mode = 0
+offset_right = 1088.0
+offset_bottom = 328.0
+text = "You won!
+Press to restart."
+label_settings = SubResource("LabelSettings_tipki")
+horizontal_alignment = 1
+
+[node name="RestartButton" type="Button" parent="VictoryUI/WindowBackground"]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 368.0
+offset_right = 744.0
+offset_bottom = 480.0
+
+[connection signal="pressed" from="VictoryUI/WindowBackground/RestartButton" to="VictoryUI" method="_on_restart_button_pressed"]

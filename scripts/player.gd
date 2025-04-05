@@ -69,7 +69,13 @@ func moveDirection(direction: String) -> void:
 			xPosition -= 1
 		_:
 			print(direction + " is an invalid direction")
+			
+# Checks if the player has reached the goal
+func checkVictoryCondition(x: int, y :int) -> void:
+	if (x == 6 && y == 8):
+		$"../VictoryUI".visible = true
 # Function to move the player in the actual game.
 func slideDirection(direction: String) -> void:
 	while checkFreeTile(direction):
 		moveDirection(direction)
+	checkVictoryCondition(xPosition,yPosition)
