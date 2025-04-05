@@ -74,8 +74,11 @@ func moveDirection(direction: String) -> void:
 func checkVictoryCondition(x: int, y :int) -> void:
 	if (x == 6 && y == 8):
 		$"../VictoryUI".visible = true
+func playCollisionSound() -> void:
+	$CollideSfx.play()
 # Function to move the player in the actual game.
 func slideDirection(direction: String) -> void:
 	while checkFreeTile(direction):
 		moveDirection(direction)
+	playCollisionSound()
 	checkVictoryCondition(xPosition,yPosition)

@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=4 uid="uid://bq7qlpweasj40"]
+[gd_scene load_steps=14 format=4 uid="uid://bq7qlpweasj40"]
 
 [ext_resource type="Texture2D" uid="uid://10ooxyulxeqn" path="res://sprites/Background.png" id="1_e3vds"]
 [ext_resource type="Texture2D" uid="uid://4jhjpac0fqrb" path="res://sprites/IceTiles.png" id="1_pdt5x"]
 [ext_resource type="Script" uid="uid://cpq4fa68eqjad" path="res://scripts/player.gd" id="2_bvy4h"]
 [ext_resource type="Script" uid="uid://bnms6h8qctc68" path="res://scripts/wall_manager.gd" id="3_m3r6e"]
 [ext_resource type="PackedScene" uid="uid://cm6a4kobh25rr" path="res://scenes/wall.tscn" id="4_ul82v"]
+[ext_resource type="AudioStream" uid="uid://cnk0q4s1kd5vy" path="res://sounds/collide.wav" id="5_choun"]
 [ext_resource type="Texture2D" uid="uid://dxce627ep8cyu" path="res://sprites/Player.png" id="6_xrqsn"]
 [ext_resource type="Script" uid="uid://dit3erq1ot105" path="res://scripts/arrow_manager.gd" id="8_s84q0"]
 [ext_resource type="Script" uid="uid://bh12soiiw5p1e" path="res://scenes/victory_ui.gd" id="9_85g3d"]
@@ -44,6 +45,9 @@ yPosition = -1
 
 [node name="PlayerSprite" type="Sprite2D" parent="Player"]
 texture = ExtResource("6_xrqsn")
+
+[node name="CollideSfx" type="AudioStreamPlayer" parent="Player"]
+stream = ExtResource("5_choun")
 
 [node name="WallManager" type="Node2D" parent="." node_paths=PackedStringArray("wall_list")]
 script = ExtResource("3_m3r6e")
