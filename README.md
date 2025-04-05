@@ -3,10 +3,10 @@ Basic reimplementation of the Puzzle DB126 "Slippery Crossings" from Professor L
 ## Screenshots
 ![Screenshot 1](./screenshots/ss1.png)
 ## TODO
-- [ ] Sound effects when hitting a wall
+- [x] Sound effects when hitting a wall
 - [ ] Background music
 - [ ] Introduction Tutorial Text
-- [ ] Win Condition
+- [x] Win Condition
 ## Installation
 **Currently there are no exported builds of the game.**
 
